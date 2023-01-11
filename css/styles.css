@@ -2,10 +2,15 @@
     --color-primary: #2584ff;
     --color-secondary: #00d9ff;
     --color-accent: #ff3400;
-    --color-heading-text: #1b0760;
+    --color-heading: #1b0760;
     --color-body-text :#908aa7;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 /* Mobile View */
 
 /* Typography */
@@ -26,7 +31,7 @@ body {
 h1, 
 h2,
 h3 {
-    color: var(--color-heading-text);
+    color: var(--color-heading);
     margin-bottom: 1.5rem;
 }
 
@@ -123,7 +128,7 @@ a {
 .list {
     list-style: none;
     padding-left: 0;
-    color: var(--color-heading-text);
+    color: var(--color-heading);
 }
 .list--inline {    
     font-weight: bold; 
@@ -164,4 +169,57 @@ a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 30px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding:2rem 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    margin:1rem 0;
+}
+.btn--secondary{
+    background-color: var(--color-secondary);
+}
+.btn--secondary:hover{
+    background-color: #18c0de;
+}
+.btn--heading{
+    background-color: var(--color-heading);
+}
+.btn--heading:hover{
+    background-color: #230c72;
+}
+.btn--accent{
+    background-color: var(--color-accent);
+}
+.btn--accent:hover{
+    background-color: #ee4d23;
+}
+
+.btn--block {
+    width: 100%;
+    display: inline-block;
+}
+.btn--outline {
+    display: inline-block;
+    border:2px solid var(--color-heading);
+    background-color: #fff;
+    color: var(--color-heading);
+}
+.btn--outline:hover {
+    background-color: var(--color-heading);
+    color: #fff;
+}
+@media screen and (min-width: 1024px) {
+    .btn {
+        font-size: 1.5rem;
+    }
 }
