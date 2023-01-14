@@ -280,18 +280,14 @@ a {
 
 /* Icon Button */
 .btn-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 2rem 3rem;
 }
 
-.btn-icon .icon-container {
-    background-color: transparent;
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
-    /* padding:10px 10px; */
+.btn-icon .icon {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+    vertical-align: middle;
 }
 
 .svg-color-icon-W {
@@ -322,11 +318,11 @@ a {
 .input-group .input {
     flex-grow: 1;
     border: 0;
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem 0 1.5rem 1.5rem;
 }
 
 .input-group--shadow {
-    box-shadow: 0 0 14px lightgrey;
+    box-shadow: 0 0 30px 20px #ebe8e8;
     border: 0;
 }
 
@@ -398,6 +394,7 @@ a {
     letter-spacing: 1px;
 }
 
+
 .plan--popular .card__header {
     position: relative;
 }
@@ -409,6 +406,23 @@ a {
     position: absolute;
     top: -6px;
     right: 6%;
+}
+
+.plan {
+    transition: transform 0.3s;
+}
+
+.plan:hover {
+    transform: scale(1.05);
+}
+
+.plan--popular {
+    transition: transform 0.3s;
+    transform: scale(1.1);
+}
+
+.plan--popular:hover {
+    transform: scale(1.15);
 }
 
 @media screen and (min-width: 1024px) {
@@ -659,8 +673,7 @@ a {
 /* Blocks */
 .block {
     --padding-vertical: 6rem;
-    border: 1px solid grey;
-    padding: var(--padding-vertical) 2rem;
+    padding: var(--padding-vertical) 1rem;
 }
 
 .block__header {
@@ -769,4 +782,80 @@ a {
         border-bottom: 0;
         font-size: 1.6rem;
     }
+}
+
+/* Hero */
+.hero--block {
+    clip-path: polygon(0% 0%, 0% 100%, 100% 93%, 100% 0%);
+}
+
+.hero {
+    padding-bottom: 4rem;
+}
+
+.hero .block__text {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.btn__hero {
+    position: relative;
+    top: 3rem;
+}
+
+.block__banner {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        padding-top: 0;
+    }
+
+    .hero .block__header {
+        text-align: start;
+        align-self: center;
+    }
+}
+
+
+/* Domain block */
+.domain-block {
+    margin: 5rem auto;
+    padding: 5px;
+    max-width: 670px;
+}
+
+.domain-block .btn-icon {
+    font-size: 1.5rem;
+}
+
+.domain-block__price {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 4rem;
+    margin: 6rem auto 0;
+    max-width: 700px;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1024px) {
+    .domain-block__price {
+        font-size: 1.5rem;
+    }
+
+    .domain-block__price {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+}
+
+/* Plan block */
+.block--plan .grid {
+    gap: 4rem;
+}
+
+.block--plan .card {
+    max-width: 500px;
+    margin: 0 auto;
 }
